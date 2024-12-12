@@ -2475,6 +2475,7 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-185, -49)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_8xvna"]
+graph_offset = Vector2(-366.823, -41.274)
 nodes/Flip/node = SubResource("AnimationNodeAnimation_oi1x1")
 nodes/Flip/position = Vector2(20, 240)
 nodes/FlipShot/node = SubResource("AnimationNodeOneShot_5to6b")
@@ -2578,16 +2579,16 @@ close_eye = ExtResource("3_a2hxo")
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Gobot/rig" index="0"]
-bones/0/position = Vector3(0, 0.360931, 0)
-bones/0/rotation = Quaternion(0.069744, 0.0188751, -0.00131987, 0.997386)
+bones/0/position = Vector3(0, 0.365726, 0)
+bones/0/rotation = Quaternion(0.0697316, -0.0266272, 0.00186195, 0.997209)
 bones/1/rotation = Quaternion(1, -4.66492e-11, -7.94223e-08, -1.12668e-08)
-bones/2/rotation = Quaternion(-0.417848, -0.146442, -0.0386184, 0.895805)
-bones/3/rotation = Quaternion(0.25503, 1.10666e-06, -8.72902e-06, 0.966933)
-bones/4/rotation = Quaternion(-0.53212, 0.00145316, -0.00673249, 0.846641)
-bones/5/rotation = Quaternion(-0.186768, 0.55017, 0.195251, 0.790132)
-bones/6/rotation = Quaternion(0.436801, -9.83775e-07, 1.4959e-05, 0.899558)
-bones/7/rotation = Quaternion(-0.765595, -0.0152411, -0.138474, 0.628058)
-bones/8/rotation = Quaternion(-0.613703, -0.286054, -0.690596, 0.254204)
+bones/2/rotation = Quaternion(-0.384665, -0.192693, -0.0507087, 0.901294)
+bones/3/rotation = Quaternion(0.239176, 1.09695e-06, -8.18011e-06, 0.970976)
+bones/4/rotation = Quaternion(-0.545644, 0.000286892, -0.00145129, 0.838015)
+bones/5/rotation = Quaternion(-0.205245, 0.506658, 0.166621, 0.820615)
+bones/6/rotation = Quaternion(0.407675, -1.05916e-06, 1.39803e-05, 0.913127)
+bones/7/rotation = Quaternion(-0.752762, -0.00966728, -0.112779, 0.648488)
+bones/8/rotation = Quaternion(-0.674544, -0.261495, -0.631303, 0.279405)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/rotation = Quaternion(2.13449e-07, 5.2989e-07, -0.395029, 0.918669)
 bones/9/scale = Vector3(1, 1, 1)
@@ -2599,7 +2600,7 @@ bones/13/rotation = Quaternion(-0.502333, 1.50259e-05, -2.85981e-05, 0.864674)
 bones/14/rotation = Quaternion(-0.371224, -0.00197691, 0.0058536, 0.928523)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/rotation = Quaternion(-0.502333, 1.49603e-05, -2.84831e-05, 0.864674)
-bones/16/rotation = Quaternion(-0.699445, 0.250019, 0.603598, 0.289719)
+bones/16/rotation = Quaternion(-0.641043, 0.275574, 0.665294, 0.265529)
 bones/16/scale = Vector3(1, 1, 1)
 bones/17/rotation = Quaternion(2.18191e-07, -6.29885e-07, 0.395029, 0.918669)
 bones/17/scale = Vector3(1, 1, 1)
@@ -2653,7 +2654,7 @@ parameters/FlipShot/request = 0
 parameters/StateMachine/Run/Add2/add_amount = 1.0
 
 [node name="HandR" type="BoneAttachment3D" parent="."]
-transform = Transform3D(0.186681, 0.153539, -0.970348, -0.784776, -0.570872, -0.241309, -0.590996, 0.806554, 0.0139229, -0.255982, 0.31042, 0.119228)
+transform = Transform3D(-0.152227, -0.240685, 0.958592, -0.780558, -0.56567, -0.265984, 0.606264, -0.788726, -0.101758, 0.24365, 0.312144, -0.118473)
 bone_name = "Thumb_1.R"
 bone_idx = 18
 use_external_skeleton = true
@@ -2677,7 +2678,7 @@ process_material = SubResource("ParticleProcessMaterial_1wbwy")
 draw_pass_1 = SubResource("QuadMesh_ganpw")
 
 [node name="Head" type="BoneAttachment3D" parent="."]
-transform = Transform3D(0.999284, -2.65427e-08, 0.0378357, 2.25763e-08, 1, 1.19209e-07, -0.0378357, -1.3411e-07, 0.999284, 0.00100036, 0.549059, 0.0264207)
+transform = Transform3D(-0.998575, 5.12228e-09, 0.0533652, 9.77059e-09, 1, 8.9407e-08, -0.0533652, 7.45058e-08, -0.998575, 0.00141096, 0.553854, -0.026402)
 bone_name = "Head"
 bone_idx = 24
 use_external_skeleton = true
@@ -2695,14 +2696,14 @@ bones/2/rotation = Quaternion(-0.0938582, -1.18683e-07, -1.11888e-08, 0.995586)
 material_override = ExtResource("13_4ophv")
 
 [node name="WiggleBone" type="BoneAttachment3D" parent="Head/WitchHat/HatRig/Skeleton3D" index="1"]
-transform = Transform3D(1, 6.39488e-13, 2.38418e-07, -1.95838e-07, 0.570345, 0.821405, -1.3598e-07, -0.821405, 0.570345, 2.66794e-14, 0.344469, -0.117855)
+transform = Transform3D(1, 6.18172e-13, 2.38417e-07, -1.95838e-07, 0.570345, 0.821405, -1.3598e-07, -0.821405, 0.570345, 2.66794e-14, 0.344469, -0.117855)
 bone_name = "Bone.001"
 bone_idx = 1
 script = ExtResource("14_cnajq")
 properties = SubResource("Resource_gd5rt")
 
 [node name="WiggleBone2" type="BoneAttachment3D" parent="Head/WitchHat/HatRig/Skeleton3D" index="2"]
-transform = Transform3D(1, 8.56204e-13, -6.39488e-13, 2.84217e-13, 0.406786, 0.913523, 1.0516e-12, -0.913524, 0.406786, 2.13287e-13, 0.5109, -0.357548)
+transform = Transform3D(1, 8.45049e-13, -6.87416e-13, 2.84217e-13, 0.406786, 0.913523, 1.0516e-12, -0.913524, 0.406786, 2.07067e-13, 0.5109, -0.357548)
 bone_name = "Bone.002"
 bone_idx = 2
 script = ExtResource("14_cnajq")
@@ -2716,7 +2717,6 @@ transform = Transform3D(0.991204, 0.0660122, -0.114701, -0.0418135, 0.978529, 0.
 
 [node name="Skeleton3D" parent="Head/CapeAnchor/cape/Armature" index="0"]
 bones/0/rotation = Quaternion(-0.707107, 2.63412e-16, 2.63412e-16, 0.707107)
-bones/1/rotation = Quaternion(-0.379553, 1.41391e-16, -3.44645e-16, 0.92517)
 
 [node name="Cape" parent="Head/CapeAnchor/cape/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("ShaderMaterial_le7dl")
@@ -2729,7 +2729,7 @@ script = ExtResource("14_cnajq")
 properties = SubResource("Resource_i30jw")
 
 [node name="WiggleBone2" type="BoneAttachment3D" parent="Head/CapeAnchor/cape/Armature/Skeleton3D" index="2"]
-transform = Transform3D(1, 3.17637e-22, -6.88214e-22, 6.61744e-22, -0.702302, 0.711879, -2.11758e-22, -0.711879, -0.702302, -2.1168e-16, 0.0031355, -0.28249)
+transform = Transform3D(0.999942, 0.0106505, 0.00134862, 0.00134862, -0.249246, 0.968439, 0.0106505, -0.968382, -0.249246, -2.1168e-16, 0.0031355, -0.28249)
 bone_name = "Tail"
 bone_idx = 1
 script = ExtResource("14_cnajq")

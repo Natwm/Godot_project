@@ -132,3 +132,11 @@ func _set_blink(state: bool):
 	else:
 		_blink_timer.stop()
 		_closed_eyes_timer.stop()
+
+func death():
+	hurt()
+	idle()
+	var tween = create_tween()
+	tween.tween_property(self, "rotation_degrees:x", 75, .7).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(func () : owner.gobot_skin_3d = null)
+	pass

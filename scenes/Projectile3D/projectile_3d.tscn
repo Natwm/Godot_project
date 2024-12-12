@@ -2,17 +2,22 @@
 
 [ext_resource type="Script" path="res://scenes/Projectile3D/Script/Projectile3D.gd" id="1_3xiju"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_ff1vv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdp1a"]
+size = Vector3(2, 1, 1.3)
 
-[sub_resource type="SphereMesh" id="SphereMesh_o3ls4"]
+[sub_resource type="BoxMesh" id="BoxMesh_dycsd"]
 
 [node name="Projectile3D" type="Area3D"]
+collision_layer = 2
 script = ExtResource("1_3xiju")
 attack_size = 8.0
 attack_size2 = 10
+damage_source = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_ff1vv")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00271368, 0, -0.162292)
+shape = SubResource("BoxShape3D_kdp1a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("SphereMesh_o3ls4")
+transform = Transform3D(2.01318, 0, 0, 0, 1, 0, 0, 0, 1.26226, 0.0137429, 0, 0)
+mesh = SubResource("BoxMesh_dycsd")

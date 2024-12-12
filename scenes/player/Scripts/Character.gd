@@ -2,6 +2,9 @@ extends CharacterBody3D
 class_name PlayerCharacter
 
 ### CONST ###
+signal player_is_dead()
+
+### CONST ###
 
 const GRAVITY : Vector3 = 40 * Vector3.DOWN
 
@@ -33,11 +36,14 @@ func _ready():
 			dash_direction = Vector3.ZERO
 			)
 	health_manager.Character_is_damaged.connect(func(value): $Label3D.text = str(value) )
-	health_manager.Character_is_dead.connect(func():queue_free() )
+	health_manager.Character_is_dead.connect(death_sequence)
 	$Label3D.text = str(health_manager.health)
 	pass
 
 func _physics_process(delta):
+	if(gobot_skin_3d == null):
+		return
+		
 	_world_plane.d = global_position.y
 	deplacement_character(delta)
 	rotation_character_with_mouse()
@@ -60,7 +66,6 @@ func _physics_process(delta):
 
 
 func deplacement_character(delta:float)-> void :
-		
 	var input_direction  = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction : Vector3 
 	if(dash_direction == Vector3.ZERO):
@@ -95,16 +100,19 @@ func rotation_character_with_mouse () -> void:
 	var mouse_ray = camera_3d.project_ray_normal(mouse_position)
 	var world_mouse_posisition = _world_plane.intersects_ray(camera_3d.global_position,mouse_ray)
 	
-	if( world_mouse_posisition != null):
+	if( world_mouse_posisition != null and gobot_skin_3d != null):
 		gobot_skin_3d.look_at(world_mouse_posisition)
 	pass
 
 func play_animation(direction : Vector3) -> void:
+	if gobot_skin_3d == null:
+		return
+		
 	if(is_on_floor() and not direction.is_zero_approx()):
 		gobot_skin_3d.run()
 		pass
 	else :
-		gobot_skin_3d.idle()		
+		gobot_skin_3d.idle()
 		pass 
 	
 	if (not is_on_floor()) :
@@ -114,5 +122,13 @@ func play_animation(direction : Vector3) -> void:
 
 func player_get_damage(hit:HitBox3D):
 	health_manager.take_damage()
+	gobot_skin_3d.hurt()
 	pass
 
+func death_sequence():
+	gobot_skin_3d.death()
+	hurt_box_3d.monitorable = false
+	hurt_box_3d.monitoring = false
+	$GobotSkin3D/wand.queue_free()
+	player_is_dead.emit()
+	pass

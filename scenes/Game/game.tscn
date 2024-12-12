@@ -1,12 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://bamtpes103kq"]
+[gd_scene load_steps=26 format=3 uid="uid://bamtpes103kq"]
 
 [ext_resource type="Texture2D" uid="uid://brbtohct73mlt" path="res://assets/level/checkboard.png" id="1_23x6y"]
 [ext_resource type="PackedScene" uid="uid://cq80f8whu3em6" path="res://scenes/player/Character.tscn" id="2_tvccw"]
 [ext_resource type="PackedScene" uid="uid://bc5xsl0pnqvjh" path="res://scenes/Dummy/dummy.tscn" id="3_k25t7"]
-[ext_resource type="Script" path="res://scenes/Hit_Hurt_Box/HitBox3D.gd" id="4_oeicd"]
 [ext_resource type="PackedScene" uid="uid://dt0eer60l7i60" path="res://scenes/Adversaire/Adversaire.tscn" id="5_fj231"]
+[ext_resource type="PackedScene" uid="uid://cvfmv33jgrh3w" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall.fbx" id="6_5rcoe"]
+[ext_resource type="PackedScene" uid="uid://se4tycaq2oxr" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_broken.fbx" id="7_phjbg"]
+[ext_resource type="PackedScene" uid="uid://d2jaotioxgxfp" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_cracked.fbx" id="8_rox1w"]
+[ext_resource type="PackedScene" uid="uid://dy8wwm6fesgas" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_doorway_Tsplit.fbx" id="9_ihrkn"]
+[ext_resource type="PackedScene" uid="uid://di6yog5h27fep" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_half.fbx" id="10_jhan8"]
+[ext_resource type="PackedScene" uid="uid://ds8i5newhl3xt" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_pillar.fbx" id="11_0xig4"]
+[ext_resource type="PackedScene" uid="uid://deae30fpbtd78" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_window_closed.fbx" id="12_1f32c"]
+[ext_resource type="PackedScene" uid="uid://12npldqiyao0" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_arched.fbx" id="13_xpinh"]
+[ext_resource type="PackedScene" uid="uid://bfgwdien6jpp8" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_archedwindow_gated_scaffold.fbx" id="14_rabpy"]
+[ext_resource type="PackedScene" uid="uid://cpgohcsc4y30e" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/wall_corner.fbx" id="15_gbyuy"]
+[ext_resource type="PackedScene" uid="uid://b72hxb6glwmvr" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_small_weeds_A.fbx" id="16_50hwm"]
+[ext_resource type="PackedScene" uid="uid://dxpkxc244g7fy" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_small_decorated.fbx" id="17_c5nnu"]
+[ext_resource type="PackedScene" uid="uid://codw0mm815qa0" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_small_corner.fbx" id="18_tdjo8"]
+[ext_resource type="PackedScene" uid="uid://3wwa84gk6o85" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_small_broken_A.fbx" id="19_oxgei"]
+[ext_resource type="PackedScene" uid="uid://vss084y6tnsh" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_small.fbx" id="20_mra0s"]
+[ext_resource type="PackedScene" uid="uid://bpjwfuutelm3p" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_large.fbx" id="21_pwjcr"]
+[ext_resource type="PackedScene" uid="uid://b3kqxj8bx8jny" path="res://scenes/Spike/spike.tscn" id="23_0yifp"]
+[ext_resource type="PackedScene" uid="uid://coy30yirlddv8" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_extralarge_grates.fbx" id="23_tfjxi"]
+[ext_resource type="PackedScene" uid="uid://b2hvr1g07pmf6" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_extralarge_grates_open.fbx" id="24_bsbxq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2udx"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0.0980392)
 albedo_texture = ExtResource("1_23x6y")
 uv1_scale = Vector3(20, 20, 20)
 uv1_triplanar = true
@@ -14,20 +34,15 @@ uv1_triplanar = true
 [sub_resource type="BoxMesh" id="BoxMesh_2rnep"]
 material = SubResource("StandardMaterial3D_n2udx")
 
-[sub_resource type="BoxMesh" id="BoxMesh_0xlmt"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ov6ye"]
-size = Vector3(1.2, 1.2, 2.48879)
-
 [node name="Game" type="Node3D"]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(25, 0, 0, 0, 10, 0, 0, 0, 15, 0, -5.02349, 0)
+transform = Transform3D(25, 0, 0, 0, 10, 0, 0, 0, 15, 0, -5.1, 0)
 use_collision = true
 mesh = SubResource("BoxMesh_2rnep")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_tvccw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.42476)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 3.42476)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 5.18152, 10.5056)
@@ -35,17 +50,166 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 [node name="Dummy" parent="." instance=ExtResource("3_k25t7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60932, -0.02349, -3.25751)
 
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86108, -3.03784)
-use_collision = true
-mesh = SubResource("BoxMesh_0xlmt")
-
-[node name="HitBox3D" type="Area3D" parent="CSGMesh3D2"]
-script = ExtResource("4_oeicd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGMesh3D2/HitBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.644397)
-shape = SubResource("BoxShape3D_ov6ye")
-
 [node name="Dummy2" parent="." instance=ExtResource("5_fj231")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+attack_speed = 3.0
+max_distance_to_player = 5.8
+min_distance_to_ATTACK = 3.0
+
+[node name="Scene" type="Node3D" parent="."]
+
+[node name="Root Scene" parent="Scene" instance=ExtResource("6_5rcoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -8)
+
+[node name="Root Scene2" parent="Scene" instance=ExtResource("6_5rcoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -8)
+
+[node name="Root Scene11" parent="Scene" instance=ExtResource("6_5rcoe")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 8)
+
+[node name="Root Scene3" parent="Scene" instance=ExtResource("6_5rcoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -8)
+
+[node name="Root Scene4" parent="Scene" instance=ExtResource("7_phjbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -8)
+
+[node name="Root Scene5" parent="Scene" instance=ExtResource("8_rox1w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -8)
+
+[node name="Root Scene6" parent="Scene" instance=ExtResource("9_ihrkn")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 0, -8)
+
+[node name="Root Scene18" parent="Scene" instance=ExtResource("9_ihrkn")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -13, 0, 0)
+
+[node name="Root Scene7" parent="Scene" instance=ExtResource("10_jhan8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, -8)
+
+[node name="Root Scene8" parent="Scene" instance=ExtResource("11_0xig4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, -4)
+
+[node name="Root Scene9" parent="Scene" instance=ExtResource("12_1f32c")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 0)
+
+[node name="Root Scene10" parent="Scene" instance=ExtResource("8_rox1w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 0, 4)
+
+[node name="Root Scene12" parent="Scene" instance=ExtResource("13_xpinh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 8)
+
+[node name="Root Scene13" parent="Scene" instance=ExtResource("6_5rcoe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 8)
+
+[node name="Root Scene14" parent="Scene" instance=ExtResource("14_rabpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 8)
+
+[node name="Root Scene15" parent="Scene" instance=ExtResource("7_phjbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 8)
+
+[node name="Root Scene16" parent="Scene" instance=ExtResource("7_phjbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 8)
+
+[node name="Root Scene17" parent="Scene" instance=ExtResource("13_xpinh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 8)
+
+[node name="Root Scene19" parent="Scene" instance=ExtResource("15_gbyuy")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -13, 0, 8)
+
+[node name="Root Scene20" parent="Scene" instance=ExtResource("7_phjbg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13, 0, 5)
+
+[node name="Root Scene21" parent="Scene" instance=ExtResource("7_phjbg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13, 0, -6)
+
+[node name="Root Scene22" parent="Scene" instance=ExtResource("16_50hwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7)
+
+[node name="Root Scene23" parent="Scene" instance=ExtResource("16_50hwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -7)
+
+[node name="Root Scene24" parent="Scene" instance=ExtResource("17_c5nnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -9)
+
+[node name="Root Scene25" parent="Scene" instance=ExtResource("17_c5nnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7)
+
+[node name="Root Scene26" parent="Scene" instance=ExtResource("17_c5nnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 3)
+
+[node name="Root Scene27" parent="Scene" instance=ExtResource("17_c5nnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -3)
+
+[node name="Root Scene28" parent="Scene" instance=ExtResource("18_tdjo8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -7)
+
+[node name="Root Scene29" parent="Scene" instance=ExtResource("19_oxgei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -1)
+
+[node name="Root Scene30" parent="Scene" instance=ExtResource("19_oxgei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 1)
+
+[node name="Root Scene31" parent="Scene" instance=ExtResource("20_mra0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 3)
+
+[node name="Root Scene33" parent="Scene" instance=ExtResource("20_mra0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 3)
+
+[node name="Root Scene34" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
+
+[node name="Root Scene32" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -4)
+
+[node name="Root Scene35" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 6)
+
+[node name="Root Scene37" parent="Scene" instance=ExtResource("23_tfjxi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="Root Scene38" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 6)
+
+[node name="Root Scene39" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 6)
+
+[node name="Root Scene40" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 6)
+
+[node name="Root Scene41" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 6)
+
+[node name="Root Scene42" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2)
+
+[node name="Root Scene43" parent="Scene" instance=ExtResource("24_bsbxq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="Root Scene44" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+
+[node name="Root Scene45" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -6)
+
+[node name="Root Scene46" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -6)
+
+[node name="Root Scene47" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -6)
+
+[node name="Root Scene48" parent="Scene" instance=ExtResource("21_pwjcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -6)
+
+[node name="Root Scene49" parent="Scene" instance=ExtResource("20_mra0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -7)
+
+[node name="Root Scene50" parent="Scene" instance=ExtResource("20_mra0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -5)
+
+[node name="Root Scene51" parent="Scene" instance=ExtResource("20_mra0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -5)
+
+[node name="Root Scene52" parent="Scene" instance=ExtResource("20_mra0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -5)
+
+[node name="spike" parent="." instance=ExtResource("23_0yifp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 6)

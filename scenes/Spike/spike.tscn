@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3kqxj8bx8jny"]
+
+[ext_resource type="PackedScene" uid="uid://crw6702act707" path="res://assets/Addon_3D_asset/KayKit_DungeonRemastered_1.1_FREE/Assets/fbx/floor_tile_big_spikes.fbx" id="1_y4exg"]
+[ext_resource type="Script" path="res://scenes/Hit_Hurt_Box/HitBox3D.gd" id="2_ltf8n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_udlsq"]
+size = Vector3(2.2, 2.2, 2.2)
+
+[node name="Spike" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_y4exg")]
+
+[node name="HitBox3D" type="Area3D" parent="Root Scene"]
+script = ExtResource("2_ltf8n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root Scene/HitBox3D"]
+shape = SubResource("BoxShape3D_udlsq")

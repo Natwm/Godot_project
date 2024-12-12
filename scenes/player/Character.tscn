@@ -23,7 +23,8 @@ shape = SubResource("CylinderShape3D_sl0yr")
 unique_name_in_owner = true
 
 [node name="wand" parent="GobotSkin3D" instance=ExtResource("3_w6vy3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.315478, 0.422255, -1.25956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.315478, 0.422255, -0.581199)
+fire_rate = 10.1
 
 [node name="Camera_anchor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0.68, 0)

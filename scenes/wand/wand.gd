@@ -1,7 +1,9 @@
 extends Marker3D
 
 ### On Ready ###
-@onready var timer = %Timer
+@onready var timer = %DisableTimer
+@onready var fire_rate_timer = %FireRate_Timer
+
 
 ### EXPORT ###
 @export var projectile_scene: PackedScene = null
@@ -15,8 +17,9 @@ func _ready():
 	pass
 
 func _process(delta):
-	if(Input.is_action_just_pressed("shoot") and timer.is_stopped()):
+	if(Input.is_action_just_pressed("shoot") and timer.is_stopped() and fire_rate_timer.is_stopped()):
 		shoot()
+
 	pass
 
 func shoot():
@@ -24,6 +27,7 @@ func shoot():
 	#owner.add_sibling(projectile)
 	#projectile.global_transform = global_transform
 	timer.start()
+	fire_rate_timer.start()
 	$Projectile3D.cast()
 	pass
 
